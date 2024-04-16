@@ -36,7 +36,7 @@ class Creat_accunt_1 extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.only(bottom: 20),
-            child: PassswordRegesterPageInput(),
+            child:PasswordInput(),
           ),
           Padding(
             padding: const EdgeInsets.only(bottom: 8),
@@ -49,7 +49,7 @@ class Creat_accunt_1 extends StatelessWidget {
             padding: const EdgeInsets.only(bottom: 26),
             child:PassswordRegesterPageInput()
           ),
-              RegisterBoton(),
+              RegesterRegesterBoton()  ,
           Padding(
               padding: const EdgeInsets.only(top: 40),
               child: Align(
@@ -64,6 +64,5 @@ class Creat_accunt_1 extends StatelessWidget {
     );
   }
 }
-
 
 

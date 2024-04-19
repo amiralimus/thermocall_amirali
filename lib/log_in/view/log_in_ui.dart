@@ -7,6 +7,7 @@ class Log_In_1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       backgroundColor: Colors.white70,
       body: Padding(
         padding:

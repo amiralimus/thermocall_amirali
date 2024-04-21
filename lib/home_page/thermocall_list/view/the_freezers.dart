@@ -3,8 +3,14 @@ import 'package:flutter/material.dart';
 
 class Freezers extends StatefulWidget {
   final bool errorfreezwes;
+  final subtitle;
+  final lastupdated;
+  final min;
+  final max;
+  final normal;
 
-  const Freezers({Key? key, required this.errorfreezwes}) : super(key: key);
+  const Freezers({Key? key, required this.errorfreezwes, this.subtitle,this.lastupdated, this.min, this.max, this.normal})
+      : super(key: key);
 
   @override
   State<Freezers> createState() => _FreezersState();
@@ -30,12 +36,18 @@ class _FreezersState extends State<Freezers> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Bio cell',
-                      style: TextStyle(color:errorfreezwes ? Colors.white : Color(0xff002039), fontSize: 23),
+                      widget.subtitle,
+                      style: TextStyle(
+                          color:
+                              errorfreezwes ? Colors.white : Color(0xff002039),
+                          fontSize: 23),
                     ),
                     Text(
-                      'Last updated 6:25 pm',
-                      style: TextStyle(color:errorfreezwes ? Colors.white : Color(0xff686868), fontSize: 16),
+                      widget.lastupdated,
+                      style: TextStyle(
+                          color:
+                              errorfreezwes ? Colors.white : Color(0xff686868),
+                          fontSize: 16),
                     )
                   ],
                 ),
@@ -44,8 +56,9 @@ class _FreezersState extends State<Freezers> {
               Padding(
                 padding: const EdgeInsets.only(right: 8.0),
                 child: Text(
-                  '-65',
-                  style: TextStyle(color: errorfreezwes ? Colors.white : Color(0xff686868)),
+                  widget.min,
+                  style: TextStyle(
+                      color: errorfreezwes ? Colors.white : Color(0xff686868)),
                 ),
               ),
               ClipRRect(
@@ -53,11 +66,14 @@ class _FreezersState extends State<Freezers> {
                 child: Container(
                   height: 55,
                   width: 55,
-                  color: Colors.red,
+                  color: errorfreezwes ? Colors.red : Colors.white,
                   child: Center(
                     child: Text(
-                      '-60',
-                      style: TextStyle(fontSize: 20, color: errorfreezwes ? Colors.white : Color(0xff002039)),
+                      widget.normal,
+                      style: TextStyle(
+                          fontSize: 20,
+                          color:
+                              errorfreezwes ? Colors.white : Color(0xff002039)),
                     ),
                   ),
                 ),
@@ -65,8 +81,9 @@ class _FreezersState extends State<Freezers> {
               Padding(
                 padding: const EdgeInsets.only(right: 8.0, left: 8),
                 child: Text(
-                  '-50',
-                  style: TextStyle(color: errorfreezwes ? Colors.white : Color(0xff686868)),
+                  widget.max,
+                  style: TextStyle(
+                      color: errorfreezwes ? Colors.white : Color(0xff686868)),
                 ),
               ),
             ],

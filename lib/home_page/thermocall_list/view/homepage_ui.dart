@@ -38,18 +38,53 @@ class _HomePageState extends State<HomePage> {
         padding: const EdgeInsets.all(16),
         child: SingleChildScrollView(
           child: Column(children: [
-            Freezers(errorfreezwes: false,),
-            Freezers(errorfreezwes: true,),
-            Freezers(errorfreezwes: false,),
-            Freezers(errorfreezwes: false,),
-            Freezers(errorfreezwes: false,),
-            Freezers(errorfreezwes: false,),
+            Freezers(
+              errorfreezwes: false,
+              subtitle: 'bab1',
+              lastupdated: 'Last updated 6:25 pm',
+              max: '-20',
+              min: '20',
+              normal: '10',
+            ),
+            Freezers(
+                errorfreezwes: true,
+                subtitle: 'bab2',
+                lastupdated: 'Last updated 7:25 pm',
+                max: '-30',
+                min: '30',
+                normal: '20'),
+            Freezers(
+                errorfreezwes: false,
+                subtitle: 'bab3',
+                lastupdated: 'Last updated 8:25 pm',
+                max: '-40',
+                min: '40',
+                normal: '30'),
+            Freezers(
+                errorfreezwes: false,
+                subtitle: 'bab4',
+                lastupdated: 'Last updated 9:25 pm',
+                max: '-50',
+                min: '50',
+                normal: '40'),
+            Freezers(
+                errorfreezwes: false,
+                subtitle: 'bab5',
+                lastupdated: 'Last updated 9:25 pm',
+                max: '-60',
+                min: '60',
+                normal: '50'),
+            Freezers(
+                errorfreezwes: false,
+                subtitle: 'bab6',
+                lastupdated: 'Last updated 10:25 pm',
+                max: '-70',
+                min: '80',
+                normal: '60'),
           ]),
         ),
       ),
       bottomNavigationBar: ClipRRect(
-
-
         child: BottomAppBar(
           height: 130,
           color: Colors.white70,
@@ -64,10 +99,11 @@ class _HomePageState extends State<HomePage> {
                     width: 55,
                     color: Color(0xff002039),
                     child: Center(
-                      child:Icon(Icons.add,
-                      color: Colors.white70,)
+                        child: Icon(
+                      Icons.add,
+                      color: Colors.white70,
+                    )),
                   ),
-                ),
                 ),
               ),
               Divider(

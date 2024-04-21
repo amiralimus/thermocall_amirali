@@ -13,7 +13,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white70,
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Row(
           children: [
@@ -38,12 +38,12 @@ class _HomePageState extends State<HomePage> {
         padding: const EdgeInsets.all(16),
         child: SingleChildScrollView(
           child: Column(children: [
-            Freezers(),
-            Freezers(),
-            FreezerRed(),
-            Freezers(),
-            Freezers(),
-            Freezers(),
+            Freezers(errorfreezwes: false,),
+            Freezers(errorfreezwes: true,),
+            Freezers(errorfreezwes: false,),
+            Freezers(errorfreezwes: false,),
+            Freezers(errorfreezwes: false,),
+            Freezers(errorfreezwes: false,),
           ]),
         ),
       ),

@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 
 class Freezers extends StatefulWidget {
@@ -9,8 +9,7 @@ class Freezers extends StatefulWidget {
   final max;
   final normal;
 
-  const Freezers({Key? key, required this.errorfreezwes, this.subtitle,this.lastupdated, this.min, this.max, this.normal})
-      : super(key: key);
+  const Freezers({super.key, required this.errorfreezwes, this.subtitle,this.lastupdated, this.min, this.max, this.normal});
 
   @override
   State<Freezers> createState() => _FreezersState();

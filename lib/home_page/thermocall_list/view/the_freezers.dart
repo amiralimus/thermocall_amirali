@@ -20,72 +20,75 @@ class _FreezersState extends State<Freezers> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 16),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(10),
-        child: Container(
-          color: errorfreezwes ? Colors.redAccent : Color(0xf1f90ff),
-          height: 100,
-          child: Row(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(16),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      widget.subtitle,
-                      style: TextStyle(
-                          color:
-                              errorfreezwes ? Colors.white : Color(0xff002039),
-                          fontSize: 23),
-                    ),
-                    Text(
-                      widget.lastupdated,
-                      style: TextStyle(
-                          color:
-                              errorfreezwes ? Colors.white : Color(0xff686868),
-                          fontSize: 16),
-                    )
-                  ],
+    return InkWell(
+      onTap: (){},
+      child: Padding(
+        padding: const EdgeInsets.only(bottom: 16),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(10),
+          child: Container(
+            color: errorfreezwes ? Colors.redAccent : Color(0xf1f90ff),
+            height: 100,
+            child: Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(16),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        widget.subtitle,
+                        style: TextStyle(
+                            color:
+                                errorfreezwes ? Colors.white : Color(0xff002039),
+                            fontSize: 23),
+                      ),
+                      Text(
+                        widget.lastupdated,
+                        style: TextStyle(
+                            color:
+                                errorfreezwes ? Colors.white : Color(0xff686868),
+                            fontSize: 16),
+                      )
+                    ],
+                  ),
                 ),
-              ),
-              Spacer(),
-              Padding(
-                padding: const EdgeInsets.only(right: 8.0),
-                child: Text(
-                  widget.min,
-                  style: TextStyle(
-                      color: errorfreezwes ? Colors.white : Color(0xff686868)),
+                Spacer(),
+                Padding(
+                  padding: const EdgeInsets.only(right: 8.0),
+                  child: Text(
+                    widget.min,
+                    style: TextStyle(
+                        color: errorfreezwes ? Colors.white : Color(0xff686868)),
+                  ),
                 ),
-              ),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(100),
-                child: Container(
-                  height: 55,
-                  width: 55,
-                  color: errorfreezwes ? Colors.red : Colors.white,
-                  child: Center(
-                    child: Text(
-                      widget.normal,
-                      style: TextStyle(
-                          fontSize: 20,
-                          color:
-                              errorfreezwes ? Colors.white : Color(0xff002039)),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(100),
+                  child: Container(
+                    height: 55,
+                    width: 55,
+                    color: errorfreezwes ? Colors.red : Colors.white,
+                    child: Center(
+                      child: Text(
+                        widget.normal,
+                        style: TextStyle(
+                            fontSize: 20,
+                            color:
+                                errorfreezwes ? Colors.white : Color(0xff002039)),
+                      ),
                     ),
                   ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(right: 8.0, left: 8),
-                child: Text(
-                  widget.max,
-                  style: TextStyle(
-                      color: errorfreezwes ? Colors.white : Color(0xff686868)),
+                Padding(
+                  padding: const EdgeInsets.only(right: 8.0, left: 8),
+                  child: Text(
+                    widget.max,
+                    style: TextStyle(
+                        color: errorfreezwes ? Colors.white : Color(0xff686868)),
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

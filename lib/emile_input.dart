@@ -1,6 +1,6 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:thermocall_amirali/home_page/thermocall_list/view/homepage_ui.dart';
 
 import 'creat_accunt/view/creat_accunt_ui.dart';
 import 'log_in/view/log_in_ui.dart';
@@ -26,7 +26,7 @@ class _EmileInputState extends State<EmileInput> {
         labelText: 'enter your email',
         border: OutlineInputBorder(
           borderSide:
-              BorderSide(color: Colors.black54, width: 1.3), // استایل حاشیه
+          BorderSide(color: Colors.black54, width: 1.3), // استایل حاشیه
         ),
       ),
     );
@@ -43,6 +43,7 @@ class PasswordInput extends StatefulWidget {
 class _PasswordInputState extends State<PasswordInput> {
   bool hidden = true;
   bool _obscureText = true;
+
   @override
   Widget build(BuildContext context) {
     return TextField(
@@ -58,7 +59,7 @@ class _PasswordInputState extends State<PasswordInput> {
           onPressed: () {
             setState(() {
               hidden = !hidden;
-              _obscureText= !_obscureText;
+              _obscureText = !_obscureText;
             });
           },
           icon: hidden
@@ -68,7 +69,7 @@ class _PasswordInputState extends State<PasswordInput> {
         labelText: 'enter your password',
         border: OutlineInputBorder(
           borderSide:
-              BorderSide(color: Colors.black54, width: 1.3), // استایل حاشیه
+          BorderSide(color: Colors.black54, width: 1.3), // استایل حاشیه
         ),
       ),
     );
@@ -87,6 +88,14 @@ class _LogInBotonState extends State<LogInBoton> {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+builder: (cintext) => HomePage()
+          ),
+
+        );
+
         // این قسمت مربوط به عملکرد دکمه است، می‌توانید کد مربوط به انجام عملیات مورد نظرتان را اینجا وارد کنید
       },
       style: ButtonStyle(
@@ -198,10 +207,11 @@ class _PassswordRegesterPageInputState
     extends State<PassswordRegesterPageInput> {
   bool _hidden = true;
   bool oobscureText = true;
+
   @override
   Widget build(BuildContext context) {
     return TextField(
-      obscureText : oobscureText,
+      obscureText: oobscureText,
       //تکست فیلد هایی که در صفحه اول استفاده میشن
       style: TextStyle(
         color: Colors.black54, // رنگ متن
@@ -215,7 +225,7 @@ class _PassswordRegesterPageInputState
             setState(() {
               _hidden = !_hidden;
               oobscureText = !oobscureText;
-    });
+            });
           },
           icon: _hidden
               ? Icon(Icons.not_interested_outlined)
@@ -223,7 +233,7 @@ class _PassswordRegesterPageInputState
         ),
         border: OutlineInputBorder(
           borderSide:
-              BorderSide(color: Colors.black54, width: 1.3), // استایل حاشیه
+          BorderSide(color: Colors.black54, width: 1.3), // استایل حاشیه
         ),
       ),
     );
@@ -241,7 +251,13 @@ class _RegesterRegesterBotonState extends State<RegesterRegesterBoton> {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: () { Navigator.push(
+          context,
+          MaterialPageRoute(
+          builder: (cintext) => HomePage()
+        ),
+      );
+      },
       style: ButtonStyle(
         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
           RoundedRectangleBorder(

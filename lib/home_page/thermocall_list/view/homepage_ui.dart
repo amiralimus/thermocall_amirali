@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:thermocall_amirali/home_page/thermocall_list/view/the_freezers.dart';
+import 'package:thermocall_amirali/log_in/view/log_in_ui.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -112,22 +113,28 @@ class _HomePageState extends State<HomePage> {
               ),
               Row(children: [
                 Padding(
-                  padding: const EdgeInsets.only(left: 16, right: 16, top: 4),
+                  padding: const EdgeInsets.only(left: 16, right: 16, top: 3),
                   child: Icon(
                     Icons.home,
                     color: Colors.grey,
-                    size: 38,
+                    size: 22,
                   ),
                 ),
                 Spacer(),
                 Padding(
-                  padding: const EdgeInsets.only(left: 16, right: 16, top: 4),
-                  child: Icon(
-                    Icons.account_circle_outlined,
-                    color: Colors.grey,
-                    size: 38,
-                  ),
-                )
+                    padding: const EdgeInsets.only(left: 16, right: 16, top: 3),
+                    child: IconButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (cintext) => Log_In_1()),
+                          );
+                        },
+                        icon: Icon(
+                          Icons.account_circle_outlined,
+                          color: Colors.grey,
+                          size:22,
+                        )))
               ]),
             ],
           ),

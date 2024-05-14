@@ -47,32 +47,25 @@ class _PasswordInputState extends State<PasswordInput> {
   @override
   Widget build(BuildContext context) {
     return TextField(
-      //تکست فیلد هایی که در صفحه اول استفاده میشن
-
-      style: TextStyle(
-        color: Colors.black54, // رنگ متن
-        fontSize: 10, // اندازه متن
-      ),
-      obscureText: _obscureText,
+      obscureText: hidden,
       decoration: InputDecoration(
-        suffixIcon: IconButton(
-          onPressed: () {
-            setState(() {
-              hidden = !hidden;
-              _obscureText = !_obscureText;
-            });
-          },
-          icon: hidden
-              ? Icon(Icons.not_interested_outlined)
-              : Icon(Icons.remove_red_eye_outlined),
-        ),
-        labelText: 'enter your password',
+        contentPadding: EdgeInsets.all(10),
+        labelText: 'Enter your password' ,
         border: OutlineInputBorder(
-          borderSide:
-          BorderSide(color: Colors.black54, width: 1.3), // استایل حاشیه
+          borderRadius: BorderRadius.circular(8),
+        ),
+        suffixIcon: IconButton(
+          icon: Icon(
+           hidden ? Icons.visibility_off : Icons.visibility,
+          ), onPressed: () {
+          setState(){
+            hidden = ! hidden;
+          }
+        },
         ),
       ),
     );
+
   }
 }
 

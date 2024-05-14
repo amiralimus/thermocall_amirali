@@ -1,75 +1,55 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
-class BotonFreezerEditor extends StatefulWidget {
+class Temperatures extends StatefulWidget {
   final min;
- final max;
- final normal;
-  const BotonFreezerEditor({super.key,this.min,this.max,this.normal});
+  final norma;
+  final max;
+
+  const Temperatures({super.key, this.min, this.norma, this.max});
 
   @override
-  State<BotonFreezerEditor> createState() => _MinBotonFreezerEditorState();
+  State<Temperatures> createState() => _TemperaturesState();
 }
 
-class _MinBotonFreezerEditorState extends State<BotonFreezerEditor> {
+class _TemperaturesState extends State<Temperatures> {
   @override
   Widget build(BuildContext context) {
     return Row(
-      children: [
-        ClipRRect(
-          borderRadius: BorderRadius.circular(100),
-          child: Container(
-            height: 75,
-            width: 75,
-            color: Colors.white10,
-            child: Center(
-              child: Text(
-                widget.min,
-                style: TextStyle(fontSize: 20, color: Colors.black),
-              ),
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(right:10),
+            child: Text(
+              widget.min,
+              style: TextStyle(color: Color(0xff002039), fontSize: 20),
             ),
           ),
-        ),
-
-
-
-
-
-
-
-ClipRRect(
-      borderRadius: BorderRadius.circular(100),
-      child: Container(
-        height: 75,
-        width: 75,
-        color: Color(0xf1f90ff),
-        child: Center(
-          child: Text(
-            widget.min,
-            style: TextStyle(fontSize: 20, color: Colors.black),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(100),
+            child: Container(
+                height: 55,
+                width: 55,
+                color: Color(0xF26F9FF),
+                child: Center(
+                    child: Text(
+                  widget.norma,
+                  style: TextStyle(color: Color(0xff002039), fontSize: 22),
+                ))),
           ),
-        ),
-      ),
-    ),
-
-        ClipRRect(
-          borderRadius: BorderRadius.circular(100),
-          child: Container(
-            height: 75,
-            width: 75,
-            color: Colors.white10,
-            child: Center(
-              child: Text(
-                widget.max,
-                style: TextStyle(fontSize: 20, color:  Colors.black),
-              ),
+          Padding(
+            padding: const EdgeInsets.only(left:10),
+            child: Text(
+              widget.max,
+              style: TextStyle(color: Color(0xff002039), fontSize: 20),
             ),
           ),
-        ),
-    ],
-    );
+        ]);
   }
 }
+
 class Botons extends StatefulWidget {
   const Botons({super.key});
 
@@ -80,54 +60,57 @@ class Botons extends StatefulWidget {
 class _BotonsState extends State<Botons> {
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        ElevatedButton(
-          onPressed: () {
-
-          },
-          style: ButtonStyle(
-            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-              RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(15),
+    return GestureDetector(
+      child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(right: 8.0, bottom: 8),
+              child: ElevatedButton(
+                child: Text(
+                  'Cacel',
+                  style: TextStyle(color: Colors.black, fontSize: 18),
+                ),
+                onPressed: () {},
+                style: ButtonStyle(
+                  padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+                    EdgeInsets.only(left: 32, right: 32), // تغییر اندازه دکمه
+                  ),
+                  foregroundColor:
+                      MaterialStateProperty.all<Color>(Colors.white),
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                      side: BorderSide(color: Colors.black, width: 1.0),
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                  ),
+                ),
               ),
             ),
-            backgroundColor: MaterialStateProperty.all<Color>(Color(0xff002039)),
-            // تغییر رنگ دکمه به رنگ آبی
-            minimumSize: MaterialStateProperty.all<Size>(
-                Size(50, 50)), // تغییر اندازه دکمه به 150 در 50
-          ),
-          child: Text(
-            'CANCEL',
-            style: TextStyle(
-                fontSize: 16.0,
-                color: Colors.white70), // سایز و فونت متن را می‌توانید تغییر دهید
-          ),
-        ),
-        ElevatedButton(
-          onPressed: () {
-
-          },
-          style: ButtonStyle(
-            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-              RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(15),
+            Padding(
+              padding: const EdgeInsets.only(left: 8.0, bottom: 8),
+              child: ElevatedButton(
+                child: Text(
+                  'Save',
+                  style: TextStyle(color: Colors.white, fontSize: 18),
+                ),
+                onPressed: () {},
+                style: ButtonStyle(
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                        borderRadius:
+                            BorderRadius.circular(10.0), // تغییر شعاع گردی
+                      ),
+                    ),
+                    padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+                      EdgeInsets.only(left: 32, right: 32), // تغییر اندازه دکمه
+                    ),
+                    backgroundColor:
+                        MaterialStateProperty.all<Color>(Color(0xff002039))),
               ),
             ),
-            backgroundColor: MaterialStateProperty.all<Color>(Color(0xff002039)),
-            // تغییر رنگ دکمه به رنگ آبی
-            minimumSize: MaterialStateProperty.all<Size>(
-                Size(50, 50)), // تغییر اندازه دکمه به 150 در 50
-          ),
-          child: Text(
-            'save',
-            style: TextStyle(
-                fontSize: 16.0,
-                color: Colors.white70), // سایز و فونت متن را می‌توانید تغییر دهید
-          ),
-        ),
-      ],
-
+          ]),
     );
   }
 }

@@ -30,7 +30,9 @@ class _FreezersState extends State<Freezers> {
             color: errorfreezwes ? Colors.redAccent : Color(0xf1f90ff),
             height: 100,
             child: Row(
+
               children: [
+
                 Padding(
                   padding: const EdgeInsets.all(16),
                   child: Column(
